@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>My Project</title>
+  <title>Chapter 3 Newton Raphson - Intercept | My Project</title>
   <meta name="description" content="The webpages are mainly about my stats project." />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="My Project" />
+  <meta property="og:title" content="Chapter 3 Newton Raphson - Intercept | My Project" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="My Project" />
+  <meta name="twitter:title" content="Chapter 3 Newton Raphson - Intercept | My Project" />
   
   <meta name="twitter:description" content="The webpages are mainly about my stats project." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="practice-learning-on-the-battle-field.html"/>
+<link rel="prev" href="project-draft.html"/>
+<link rel="next" href="the-main-one.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -166,14 +166,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">My Project</h1>
-<p class="author"><em>Bill Last Updated:</em></p>
-<p class="date"><em>20 January, 2020</em></p>
-</div>
-<div id="my-section" class="section level1 unnumbered">
-<h1>Preface: Motivation</h1>
-<p>This is my MS project (in progress). While I have tried my best, probably there are still some typos and errors. Please feel free to let me know in case you find one. Thank you!</p>
+<div id="newton-raphson---intercept" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Newton Raphson - Intercept</h1>
+<p>Using the Newton Raphson, the following code calculates the basic logistic model, without any random effects. As we can see, it produces the same result as the R generic function of GLM.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1">y&lt;-<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>) <span class="co">## observations</span></a>
+<a class="sourceLine" id="cb26-2" title="2">n=<span class="kw">length</span>(y) <span class="co"># the number of observations</span></a>
+<a class="sourceLine" id="cb26-3" title="3">Expit&lt;-<span class="cf">function</span>(x){<span class="kw">exp</span>(x)<span class="op">/</span>(<span class="dv">1</span><span class="op">+</span><span class="kw">exp</span>(x))}</a>
+<a class="sourceLine" id="cb26-4" title="4"></a>
+<a class="sourceLine" id="cb26-5" title="5">x_intercept&lt;-<span class="kw">rep</span>(<span class="dv">1</span>,n)</a>
+<a class="sourceLine" id="cb26-6" title="6">x_intercept&lt;-<span class="kw">as.matrix</span>(x_intercept)</a>
+<a class="sourceLine" id="cb26-7" title="7"></a>
+<a class="sourceLine" id="cb26-8" title="8">tolerance=<span class="fl">1e-3</span></a>
+<a class="sourceLine" id="cb26-9" title="9">max_its=<span class="dv">2000</span>;iteration=<span class="dv">1</span>;difference=<span class="dv">2</span></a>
+<a class="sourceLine" id="cb26-10" title="10">W&lt;-<span class="kw">matrix</span>(<span class="dv">0</span>,n,n)</a>
+<a class="sourceLine" id="cb26-11" title="11">beta_old&lt;-<span class="fl">0.4</span></a>
+<a class="sourceLine" id="cb26-12" title="12"></a>
+<a class="sourceLine" id="cb26-13" title="13"><span class="cf">while</span>(difference<span class="op">&gt;</span>tolerance <span class="op">&amp;</span><span class="st"> </span>iteration<span class="op">&lt;</span>max_its)</a>
+<a class="sourceLine" id="cb26-14" title="14">  {</a>
+<a class="sourceLine" id="cb26-15" title="15">  <span class="co"># The first order</span></a>
+<a class="sourceLine" id="cb26-16" title="16">  f_firstorder&lt;-<span class="kw">t</span>(x_intercept)<span class="op">%*%</span>(y<span class="op">-</span><span class="kw">Expit</span>(x_intercept<span class="op">%*%</span>beta_old))</a>
+<a class="sourceLine" id="cb26-17" title="17">  </a>
+<a class="sourceLine" id="cb26-18" title="18">  <span class="co"># The second order</span></a>
+<a class="sourceLine" id="cb26-19" title="19">  <span class="kw">diag</span>(W) =<span class="st"> </span><span class="kw">Expit</span>(x_intercept<span class="op">%*%</span>beta_old)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="kw">Expit</span>(x_intercept<span class="op">%*%</span>beta_old))</a>
+<a class="sourceLine" id="cb26-20" title="20">  </a>
+<a class="sourceLine" id="cb26-21" title="21">  f_secondorder&lt;-<span class="op">-</span><span class="kw">t</span>(x_intercept)<span class="op">%*%</span>W<span class="op">%*%</span>x_intercept</a>
+<a class="sourceLine" id="cb26-22" title="22">  </a>
+<a class="sourceLine" id="cb26-23" title="23">  <span class="co"># Calculate the beta_updated</span></a>
+<a class="sourceLine" id="cb26-24" title="24">  beta_updated=beta_old<span class="op">-</span>(<span class="kw">solve</span>(f_secondorder)<span class="op">%*%</span>f_firstorder)</a>
+<a class="sourceLine" id="cb26-25" title="25">  </a>
+<a class="sourceLine" id="cb26-26" title="26">  difference=<span class="kw">max</span>(<span class="kw">abs</span>(beta_updated<span class="op">-</span>beta_old));</a>
+<a class="sourceLine" id="cb26-27" title="27">  </a>
+<a class="sourceLine" id="cb26-28" title="28">  iteration=iteration<span class="op">+</span><span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb26-29" title="29">  </a>
+<a class="sourceLine" id="cb26-30" title="30">  beta_old=beta_updated}</a>
+<a class="sourceLine" id="cb26-31" title="31"></a>
+<a class="sourceLine" id="cb26-32" title="32">beta_old</a></code></pre></div>
+<pre><code>##           [,1]
+## [1,] 0.4054651</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">glm</span>(y<span class="op">~</span><span class="dv">1</span>, <span class="dt">family=</span>binomial)<span class="op">$</span>coefficients</a></code></pre></div>
+<pre><code>## (Intercept) 
+##   0.4054651</code></pre>
 
 </div>
             </section>
@@ -181,8 +213,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="practice-learning-on-the-battle-field.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="project-draft.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-main-one.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -213,7 +245,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/40-NR-intercept.Rmd",
 "text": "Edit"
 },
 "history": {

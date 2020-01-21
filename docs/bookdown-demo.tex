@@ -18,12 +18,11 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
+\usepackage{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
-\usepackage[unicode=true]{hyperref}
-\hypersetup{
+\usepackage{hyperref}
+\hypersetup{unicode=true,
             pdftitle={My Project},
             pdfauthor={Bill Last Updated:},
             pdfborder={0 0 0},
@@ -40,40 +39,38 @@
 \usepackage{framed}
 \definecolor{shadecolor}{RGB}{248,248,248}
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
-% Fix footnotes in tables (requires footnote package)
-\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -103,10 +100,31 @@
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 
-% set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{My Project}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Bill Last Updated:}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{20 January, 2020}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -117,10 +135,6 @@
 }
 \makeatother
 
-\title{My Project}
-\author{Bill Last Updated:}
-\date{20 January, 2020}
-
 \begin{document}
 \maketitle
 
@@ -128,17 +142,17 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter*{Preface: Motivation}\label{my-section}
+\hypertarget{my-section}{%
+\chapter*{Preface: Motivation}\label{my-section}}
 \addcontentsline{toc}{chapter}{Preface: Motivation}
 
-This is my MS project (in progress). While I have tried my best,
-probably there are still some typos and errors. Please feel free to let
-me know in case you find one. Thank you!
+This is my MS project (in progress). While I have tried my best, probably there are still some typos and errors. Please feel free to let me know in case you find one. Thank you!
 
-\chapter{Practice: Learning on the Battle
-Field}\label{practice-learning-on-the-battle-field}
+\hypertarget{practice-learning-on-the-battle-field}{%
+\chapter{Practice: Learning on the Battle Field}\label{practice-learning-on-the-battle-field}}
 
-\section{R code}\label{r-code}
+\hypertarget{r-code}{%
+\section{R code}\label{r-code}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -154,8 +168,8 @@ Field}\label{practice-learning-on-the-battle-field}
 \CommentTok{#table(mydata1$numberOfPassRushers)}
 
 
-\NormalTok{##mydata3 = read.csv(url('https://raw.githubusercontent.com/ryurko/nflscrapR-data/master/legacy_data/season_play_by_play/pbp_2017.csv'))}
-\NormalTok{##write.csv(mydata3,'2017playbyplay.csv')}
+\CommentTok{##mydata3 = read.csv(url('https://raw.githubusercontent.com/ryurko/nflscrapR-data/master/legacy_data/season_play_by_play/pbp_2017.csv'))}
+\CommentTok{##write.csv(mydata3,'2017playbyplay.csv')}
 
 \NormalTok{mydata3<-}\KeywordTok{read.csv}\NormalTok{(}\StringTok{'2017playbyplay.csv'}\NormalTok{)}
 \KeywordTok{nrow}\NormalTok{(mydata3)}
@@ -196,7 +210,7 @@ Field}\label{practice-learning-on-the-battle-field}
 
 \NormalTok{n_counting<-}\DecValTok{0}  \CommentTok{# help counting the number of pairs}
 
-\NormalTok{## The following code collects all the rows of each pair. However, it is difficult to analyze data}
+\CommentTok{## The following code collects all the rows of each pair. However, it is difficult to analyze data}
 \CommentTok{# in such a format. }
 
 \CommentTok{#empty_df = mydata8[FALSE,]}
@@ -227,9 +241,9 @@ Field}\label{practice-learning-on-the-battle-field}
 
 
 \CommentTok{# The following code only collects the second row of the pair, but adds data of }
-\NormalTok{### PT_L: type of play in the last first down from the other team}
-\NormalTok{### TG_L: Yards.Gained in the last play}
-\NormalTok{### FirstDown: did they get first down or not. Note that, if yes, it means it was a fumble.}
+\CommentTok{### PT_L: type of play in the last first down from the other team}
+\CommentTok{### TG_L: Yards.Gained in the last play}
+\CommentTok{### FirstDown: did they get first down or not. Note that, if yes, it means it was a fumble.}
 
 \NormalTok{PT_L=}\StringTok{"Pass"}
 \NormalTok{TG_L=}\DecValTok{0}
@@ -246,7 +260,7 @@ Field}\label{practice-learning-on-the-battle-field}
 
     \ControlFlowTok{if}\NormalTok{(i}\OperatorTok{==}\DecValTok{1}\NormalTok{)}
 \NormalTok{    \{row_id<-j\}}
-    \ControlFlowTok{else}\NormalTok{ \{row_id<-}\KeywordTok{sum}\NormalTok{(count_vector}\OperatorTok{$}\NormalTok{freq[}\DecValTok{1}\OperatorTok{:}\NormalTok{(i}\OperatorTok{-}\DecValTok{1}\NormalTok{)])}\OperatorTok{+}\NormalTok{j\}}
+    \ControlFlowTok{else}\NormalTok{ \{row_id<-}\KeywordTok{sum}\NormalTok{(count_vector}\OperatorTok{$}\NormalTok{freq[}\DecValTok{1}\OperatorTok{:}\NormalTok{(i}\DecValTok{-1}\NormalTok{)])}\OperatorTok{+}\NormalTok{j\}}
 
     \KeywordTok{print}\NormalTok{(row_id)}
     \ControlFlowTok{if}\NormalTok{(}\KeywordTok{as.character}\NormalTok{(mydata8[row_id,]}\OperatorTok{$}\NormalTok{posteam)}\OperatorTok{!=}\KeywordTok{as.character}\NormalTok{(mydata8[row_id}\OperatorTok{+}\DecValTok{1}\NormalTok{,]}\OperatorTok{$}\NormalTok{posteam))}
@@ -277,14 +291,9 @@ Field}\label{practice-learning-on-the-battle-field}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  mylogit1: in general, a team has a different play in their first down,
-  compared to the other team in the last first down.
+  mylogit1: in general, a team has a different play in their first down, compared to the other team in the last first down.
 \item
-  mylogit2: If the defence team passed in the last first down, the
-  offence team is less likely to use pass. If the defence team gained
-  more yards, the offence team is more likely to pass in the next first
-  down. If the defence team fumbled, it will reduce the chance the
-  offence team to do the pass.
+  mylogit2: If the defence team passed in the last first down, the offence team is less likely to use pass. If the defence team gained more yards, the offence team is more likely to pass in the next first down. If the defence team fumbled, it will reduce the chance the offence team to do the pass.
 \end{enumerate}
 
 \begin{Shaded}
@@ -418,7 +427,8 @@ Field}\label{practice-learning-on-the-battle-field}
 \end{Highlighting}
 \end{Shaded}
 
-\section{References}\label{references}
+\hypertarget{references}{%
+\section{References}\label{references}}
 
 \url{https://arxiv.org/pdf/1403.7993.pdf}
 
@@ -426,7 +436,8 @@ Field}\label{practice-learning-on-the-battle-field}
 
 \url{https://rpubs.com/JanpuHou/326048}
 
-\chapter{Project Draft}\label{project-draft}
+\hypertarget{project-draft}{%
+\chapter{Project Draft}\label{project-draft}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -527,18 +538,12 @@ Field}\label{practice-learning-on-the-battle-field}
 ## Number of Fisher Scoring iterations: 4
 \end{verbatim}
 
-\section{Background}\label{background}
+\hypertarget{background}{%
+\section{Background}\label{background}}
 
-The following code is from this website:
-\url{http://www.biostat.umn.edu/~baolin/teaching/probmods/GLMM_mcmc.html}.
-I will remove it on this page after I complete my practice and learning.
+The following code is from this website: \url{http://www.biostat.umn.edu/~baolin/teaching/probmods/GLMM_mcmc.html}. I will remove it on this page after I complete my practice and learning.
 
-In this example, it simulates a longitudinal data with 4 variables for
-each of 1000 separate individuals. Specifically, there are three
-continuous covariates (varying over time) and one ordinal covariate
-(constant over time). We will consider a random intercept model (mean
-zero and variance 100), and fit the data with glmer() from lme4 R
-package.
+In this example, it simulates a longitudinal data with 4 variables for each of 1000 separate individuals. Specifically, there are three continuous covariates (varying over time) and one ordinal covariate (constant over time). We will consider a random intercept model (mean zero and variance 100), and fit the data with glmer() from lme4 R package.
 
 The R code:
 
@@ -547,26 +552,26 @@ The R code:
 \NormalTok{n =}\StringTok{ }\DecValTok{1000}\NormalTok{; p =}\StringTok{ }\DecValTok{3}\NormalTok{; K =}\StringTok{ }\DecValTok{4}\NormalTok{; sig =}\StringTok{ }\DecValTok{10}
 \KeywordTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
 
-\NormalTok{## time varying covariates}
+\CommentTok{## time varying covariates}
 \NormalTok{Xl =}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{'list'}\NormalTok{, K)}
 \CommentTok{# 4 list, each 1000 individuals}
 \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\NormalTok{K) Xl[[i]] =}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(n}\OperatorTok{*}\NormalTok{p), n,p)}
 
-\NormalTok{## constant covariate}
+\CommentTok{## constant covariate}
 \NormalTok{Z =}\StringTok{ }\KeywordTok{rbinom}\NormalTok{(n, }\DecValTok{2}\NormalTok{,}\FloatTok{0.2}\NormalTok{)}
 
-\NormalTok{## random effects}
+\CommentTok{## random effects}
 \CommentTok{#just 1000 random numubers?}
 \NormalTok{U =}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(n)}\OperatorTok{*}\NormalTok{sig}
 
-\NormalTok{## fixed effects}
+\CommentTok{## fixed effects}
 \CommentTok{# It ends a 1000*4 matrix}
 \NormalTok{etaX =}\StringTok{ }\KeywordTok{sapply}\NormalTok{(Xl, rowSums)}
 
-\NormalTok{## random errors}
+\CommentTok{## random errors}
 \NormalTok{eps =}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(n}\OperatorTok{*}\NormalTok{K), n,K)}
 
-\NormalTok{## logit model}
+\CommentTok{## logit model}
 \NormalTok{eta =}\StringTok{ }\NormalTok{etaX }\OperatorTok{+}\StringTok{ }\NormalTok{U }\OperatorTok{+}\StringTok{ }\NormalTok{eps}
 \CommentTok{# calculate probability}
 \NormalTok{prb =}\StringTok{ }\DecValTok{1}\OperatorTok{/}\NormalTok{(}\DecValTok{1}\OperatorTok{+}\KeywordTok{exp}\NormalTok{(}\OperatorTok{-}\NormalTok{eta))}
@@ -575,10 +580,10 @@ The R code:
 \NormalTok{Xs =}\StringTok{ }\NormalTok{Xl[[}\DecValTok{1}\NormalTok{]]}
 \ControlFlowTok{for}\NormalTok{(k }\ControlFlowTok{in} \DecValTok{2}\OperatorTok{:}\NormalTok{K) Xs =}\StringTok{ }\KeywordTok{rbind}\NormalTok{(Xs, Xl[[k]])}
 
-\NormalTok{## GLMM model}
+\CommentTok{## GLMM model}
 \KeywordTok{library}\NormalTok{(lme4)}
 \NormalTok{sid =}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{n, K) }\CommentTok{# a vector of 1-1000, 4 repetitions}
-\NormalTok{## model fit with GLMMM (default to Laplace approximation)}
+\CommentTok{## model fit with GLMMM (default to Laplace approximation)}
 \CommentTok{# subjects as the random effect}
 \NormalTok{a1 =}\StringTok{ }\KeywordTok{glmer}\NormalTok{(}\KeywordTok{c}\NormalTok{(D) }\OperatorTok{~}\StringTok{ }\NormalTok{Xs }\OperatorTok{+}\StringTok{ }\NormalTok{Z[sid] }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{sid), }\DataTypeTok{family=}\NormalTok{binomial)}
 
@@ -604,9 +609,9 @@ The R code:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{## MH sampling of random effects | data}
-\NormalTok{## logit\textbackslash{}Pr(D_i|eta_i,U) = eta_i+U; U \textbackslash{}sim N(0,Vu)}
-\NormalTok{## proposal dist: N(Uc,Vc)}
+\CommentTok{## MH sampling of random effects | data}
+\CommentTok{## logit\textbackslash{}Pr(D_i|eta_i,U) = eta_i+U; U \textbackslash{}sim N(0,Vu)}
+\CommentTok{## proposal dist: N(Uc,Vc)}
 
 \NormalTok{U.mh <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(Di,eta, Vu, Uc,Vc, }\DataTypeTok{B=}\DecValTok{100}\NormalTok{)\{}
 \NormalTok{  ub =}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, B)}
@@ -614,7 +619,7 @@ The R code:
 \NormalTok{  prb =}\StringTok{ }\DecValTok{1}\OperatorTok{/}\NormalTok{(}\DecValTok{1}\OperatorTok{+}\KeywordTok{exp}\NormalTok{(}\OperatorTok{-}\NormalTok{eta}\OperatorTok{-}\NormalTok{ub[}\DecValTok{1}\NormalTok{]))}
 \NormalTok{  llk0 =}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(ub[}\DecValTok{1}\NormalTok{],}\DataTypeTok{sd=}\KeywordTok{sqrt}\NormalTok{(Vu), }\DataTypeTok{log=}\OtherTok{TRUE}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{sum}\NormalTok{(}\KeywordTok{log}\NormalTok{(Di}\OperatorTok{*}\NormalTok{prb}\OperatorTok{+}\NormalTok{(}\DecValTok{1}\OperatorTok{-}\NormalTok{Di)}\OperatorTok{*}\NormalTok{(}\DecValTok{1}\OperatorTok{-}\NormalTok{prb))) }\OperatorTok{-}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(ub[}\DecValTok{1}\NormalTok{],Uc,}\KeywordTok{sqrt}\NormalTok{(Vc), }\DataTypeTok{log=}\OtherTok{TRUE}\NormalTok{) }\CommentTok{# likelihood function? }
   \ControlFlowTok{for}\NormalTok{(k }\ControlFlowTok{in} \DecValTok{2}\OperatorTok{:}\NormalTok{B)\{}
-\NormalTok{    ub[k] =}\StringTok{ }\NormalTok{ub[k}\OperatorTok{-}\DecValTok{1}\NormalTok{]}
+\NormalTok{    ub[k] =}\StringTok{ }\NormalTok{ub[k}\DecValTok{-1}\NormalTok{]}
 \NormalTok{    uk =}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{1}\NormalTok{)}\OperatorTok{*}\KeywordTok{sqrt}\NormalTok{(Vc)}\OperatorTok{+}\NormalTok{Uc}
 \NormalTok{    prb =}\StringTok{ }\DecValTok{1}\OperatorTok{/}\NormalTok{(}\DecValTok{1}\OperatorTok{+}\KeywordTok{exp}\NormalTok{(}\OperatorTok{-}\NormalTok{eta}\OperatorTok{-}\NormalTok{uk))}
 \NormalTok{    llk1 =}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(uk,}\DataTypeTok{sd=}\KeywordTok{sqrt}\NormalTok{(Vu), }\DataTypeTok{log=}\OtherTok{TRUE}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{sum}\NormalTok{(}\KeywordTok{log}\NormalTok{(Di}\OperatorTok{*}\NormalTok{prb}\OperatorTok{+}\NormalTok{(}\DecValTok{1}\OperatorTok{-}\NormalTok{Di)}\OperatorTok{*}\NormalTok{(}\DecValTok{1}\OperatorTok{-}\NormalTok{prb))) }\OperatorTok{-}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(uk,Uc,}\KeywordTok{sqrt}\NormalTok{(Vc), }\DataTypeTok{log=}\OtherTok{TRUE}\NormalTok{)}
@@ -641,14 +646,14 @@ The R code:
 \NormalTok{    res =}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(Uc,}\DataTypeTok{sd=}\KeywordTok{sqrt}\NormalTok{(Vu), }\DataTypeTok{log=}\OtherTok{TRUE}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{sum}\NormalTok{(}\KeywordTok{log}\NormalTok{(Di}\OperatorTok{*}\NormalTok{prb}\OperatorTok{+}\NormalTok{(}\DecValTok{1}\OperatorTok{-}\NormalTok{Di)}\OperatorTok{*}\NormalTok{(}\DecValTok{1}\OperatorTok{-}\NormalTok{prb)))}
     \OperatorTok{-}\NormalTok{res}
 \NormalTok{  \}}
-\NormalTok{  tmp =}\StringTok{ }\KeywordTok{try}\NormalTok{(}\KeywordTok{optim}\NormalTok{(Uc, llk0, }\DataTypeTok{method=}\StringTok{'Brent'}\NormalTok{, }\DataTypeTok{lower=}\NormalTok{Uc}\OperatorTok{-}\DecValTok{10}\NormalTok{,}\DataTypeTok{upper=}\NormalTok{Uc}\OperatorTok{+}\DecValTok{10}\NormalTok{) )}
+\NormalTok{  tmp =}\StringTok{ }\KeywordTok{try}\NormalTok{(}\KeywordTok{optim}\NormalTok{(Uc, llk0, }\DataTypeTok{method=}\StringTok{'Brent'}\NormalTok{, }\DataTypeTok{lower=}\NormalTok{Uc}\DecValTok{-10}\NormalTok{,}\DataTypeTok{upper=}\NormalTok{Uc}\OperatorTok{+}\DecValTok{10}\NormalTok{) )}
   \ControlFlowTok{if}\NormalTok{(}\KeywordTok{class}\NormalTok{(tmp)}\OperatorTok{==}\StringTok{'try-error'}\NormalTok{) tmp =}\StringTok{ }\KeywordTok{optim}\NormalTok{(Uc, llk0)}
 \NormalTok{  Uc =}\StringTok{ }\NormalTok{tmp}\OperatorTok{$}\NormalTok{par}
 \NormalTok{  Vc =}\StringTok{ }\DecValTok{1}\OperatorTok{/}\KeywordTok{hessian}\NormalTok{(llk0, Uc)}
   \KeywordTok{c}\NormalTok{(Uc,Vc)}
 \NormalTok{\}}
 \NormalTok{UV.mh <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(Vu,beta,Uc, D,X,subj)\{}
-\NormalTok{  ## Cov matrix}
+  \CommentTok{## Cov matrix}
 \NormalTok{  sid =}\StringTok{ }\KeywordTok{unique}\NormalTok{(subj);  n =}\StringTok{ }\KeywordTok{length}\NormalTok{(sid)}
 \NormalTok{  Uc =}\StringTok{ }\NormalTok{Vc =}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n)}
   \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\NormalTok{n)\{}
@@ -663,9 +668,9 @@ The R code:
 
 \CommentTok{#Newton Raphson update}
 \CommentTok{# Compute first/second derives of complete data log likelihood}
-\NormalTok{## score and fisher information}
+\CommentTok{## score and fisher information}
 \NormalTok{SF.mh <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(Vu,beta,Uc,Vc, D,X,subj)\{}
-\NormalTok{  ## S/hessian matrix}
+  \CommentTok{## S/hessian matrix}
 \NormalTok{  sid =}\StringTok{ }\KeywordTok{unique}\NormalTok{(subj);  n =}\StringTok{ }\KeywordTok{length}\NormalTok{(sid)}
 \NormalTok{  p =}\StringTok{ }\KeywordTok{dim}\NormalTok{(X)[}\DecValTok{2}\NormalTok{]}
 \NormalTok{  S =}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, p)}
@@ -689,17 +694,17 @@ The R code:
 \KeywordTok{library}\NormalTok{(lme4)}
 \NormalTok{sid =}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{n, K)}
 \NormalTok{a1 =}\StringTok{ }\KeywordTok{glmer}\NormalTok{(}\KeywordTok{c}\NormalTok{(D) }\OperatorTok{~}\StringTok{ }\NormalTok{Xs }\OperatorTok{+}\StringTok{ }\NormalTok{Z[sid] }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{sid), }\DataTypeTok{family=}\NormalTok{binomial)}
-\NormalTok{## extract variance and fixed effects parameters; + mode/variance of (random effects|data)}
+\CommentTok{## extract variance and fixed effects parameters; + mode/variance of (random effects|data)}
 \NormalTok{Vu =}\StringTok{ }\NormalTok{(}\KeywordTok{getME}\NormalTok{(a1,}\StringTok{'theta'}\NormalTok{))}\OperatorTok{^}\DecValTok{2}\NormalTok{; beta =}\StringTok{ }\KeywordTok{fixef}\NormalTok{(a1); Um =}\StringTok{ }\KeywordTok{ranef}\NormalTok{(a1,}\DataTypeTok{condVar=}\OtherTok{TRUE}\NormalTok{)}
 \NormalTok{D =}\StringTok{ }\KeywordTok{c}\NormalTok{(D); X =}\StringTok{ }\KeywordTok{cbind}\NormalTok{(}\DecValTok{1}\NormalTok{,Xs,Z[sid]); subj =}\StringTok{ }\NormalTok{sid}
 \NormalTok{Uc =}\StringTok{ }\KeywordTok{unlist}\NormalTok{(Um[[}\DecValTok{1}\NormalTok{]]); Vc =}\StringTok{ }\KeywordTok{c}\NormalTok{( }\KeywordTok{attr}\NormalTok{(Um[[}\DecValTok{1}\NormalTok{]], }\StringTok{'postVar'}\NormalTok{) )}
 \ControlFlowTok{for}\NormalTok{(b }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\DecValTok{100}\NormalTok{)\{}
-\NormalTok{  ## NR updates with MH sampling}
+  \CommentTok{## NR updates with MH sampling}
 \NormalTok{  obj =}\StringTok{ }\KeywordTok{SF.mh}\NormalTok{(Vu,beta,Uc,Vc, D,X,subj)}
 \NormalTok{  Vu =}\StringTok{ }\NormalTok{obj}\OperatorTok{$}\NormalTok{sig2}
 \NormalTok{  tmp =}\StringTok{ }\KeywordTok{solve}\NormalTok{(obj}\OperatorTok{$}\NormalTok{FI,obj}\OperatorTok{$}\NormalTok{S)}
 \NormalTok{  beta =}\StringTok{ }\NormalTok{beta }\OperatorTok{+}\StringTok{ }\NormalTok{tmp}
-\NormalTok{  ## Proposal dist update}
+  \CommentTok{## Proposal dist update}
 \NormalTok{  tmp1 =}\StringTok{ }\KeywordTok{UV.mh}\NormalTok{(Vu,beta,Uc, D,X,subj)}
 \NormalTok{  Uc =}\StringTok{ }\NormalTok{tmp1}\OperatorTok{$}\NormalTok{Uc; Vc =}\StringTok{ }\NormalTok{tmp1}\OperatorTok{$}\NormalTok{Vc}
   \KeywordTok{cat}\NormalTok{(b, }\StringTok{':'}\NormalTok{, tmp, }\StringTok{';'}\NormalTok{, obj}\OperatorTok{$}\NormalTok{S}\OperatorTok{/}\NormalTok{n, }\StringTok{'}\CharTok{\textbackslash{}n\textbackslash{}t}\StringTok{'}\NormalTok{, }\KeywordTok{sqrt}\NormalTok{(Vu), beta, }\StringTok{'}\CharTok{\textbackslash{}n}\StringTok{'}\NormalTok{)}
@@ -707,8 +712,8 @@ The R code:
 \end{Highlighting}
 \end{Shaded}
 
-\section{Important Examples with R
-code}\label{important-examples-with-r-code}
+\hypertarget{important-examples-with-r-code}{%
+\section{Important Examples with R code}\label{important-examples-with-r-code}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -729,7 +734,8 @@ code}\label{important-examples-with-r-code}
 
 \url{https://stats.idre.ucla.edu/r/dae/mixed-effects-logistic-regression/}
 
-\section{References}\label{references-1}
+\hypertarget{references-1}{%
+\section{References}\label{references-1}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -740,67 +746,14 @@ code}\label{important-examples-with-r-code}
 
 \url{http://www.michelecoscia.com/?page_id=379}
 
-\chapter{The Main One}\label{the-main-one}
+\hypertarget{newton-raphson---intercept}{%
+\chapter{Newton Raphson - Intercept}\label{newton-raphson---intercept}}
 
-\section{The Basic Idea}\label{the-basic-idea}
-
-\[L(\beta,D|Y)=\int \prod_{i=1}^{n} f_{y_i|u}(y_i|b_i,\beta)f_{b_i}(b_i|D)db_i\]
-
-Notations :
-
-\(y\): Variable for the fixed effect
-
-\(b\): Variable for the random effect
-
-\(\beta\): Parameters for the fixed effect
-
-\(D\): Parameters for the random effect
-
-The dimension of the integral is equal to the levels of the random
-factors (i.e., the number of observations).
-
-\section{Model and R Code}\label{model-and-r-code}
-
-Covarance Matrix for \(n\) observations:
-
-\[V=\sigma^2 \begin{bmatrix} 1 & \rho & \rho^2 & ... & \rho^{n-1} & \rho^n \\ \rho & 1 & \rho & ... & \rho^{n-2}& \rho^{n-1}\\ \rho^2 & \rho & 1 & ... & \rho^{n-3}& \rho^{n-2} \\ ...\\ \rho^n & \rho^{n-1} & \rho^{n-2} & ... & \rho & 1 \end{bmatrix}\]
-
-The inverse matrix is as follows:
-
-\[Q=V^{-1}=\frac{1}{\sigma^2(1-\rho)} \begin{bmatrix} 1 & -\rho & 0 & ... & 0 & 0 \\ -\rho & 1+\rho^2 & -\rho & ... & 0 & 0\\ 0 & -\rho & 1+\rho^2 & ... & 0 & 0 \\ ...\\ 0 & 0 & 0 & ... & 1+\rho^2 &-\rho\\ 0 & 0 & 0 & ... & -\rho & 1 \end{bmatrix}\]
-
-\[N(-\sum_{j\neq k} Q_{kj}b_j^{(m)}Q_{kk}^{-1},Q_{kk}^{-1})\]
-\[ln L(\beta, \theta; Y,b)=\ell=lnf_{Y|b}(Y|b,\beta)+lnf_b(b|\theta)\]
-
-\[a^{(m+1)}=a^{(m)}+\tau(a^{(m)})^{-1} S(a^{(m)})\] Where,
-
-\[\tau(a) = -E(\frac{\partial^2 \ell}{\partial \alpha \partial \alpha^{'}}|Y)\]
-
-\[S(a) = E(\frac{\partial \ell}{\partial \alpha }|Y)\] Note that,
-\(\alpha\) is a combination of two sets of parameters.
-
-\[\alpha = \binom{\beta}{b} \]
-
-\[\ell=\sum_{i=1}^{n}\{[y_i ln (\frac{e^{\beta^Tx_i+b_i}}{1+e^{\beta^Tx_i+b_i}}) + (1-y_i) ln(1-\frac{e^{\beta^Tx_i+b_i}}{1+e^{\beta^Tx_i+b_i}})]+lnf_b(b_i|\theta)\}\]
-
-\[\frac{\partial lnf(Y|b, \beta)}{\partial \beta}=X^{'}(Y-E(Y|b))\]
-
-\[\frac{\partial lnf(Y|b, \beta)}{\partial \beta \partial \beta^{'}}=-X^{'}(Y-E(Y|b))\]
-
-\[\begin{aligned} \nabla \ell &= \sum_{i=1}^{n} [y_i \frac{1}{p(\beta ^T x_i+b_i)} \frac{\partial p(\beta ^T x_i+b_i)}{\partial (\beta ^T x_i+b_i)}\frac{\partial (\beta ^T x_i+b_i)}{\partial \beta}+(1-y_i) \frac{1}{1-p(\beta ^T x_i+b_i)}(-1)\frac{\partial p(\beta ^T x_i+b_i)}{\partial (\beta ^T x_i+b_i)}\frac{\partial (\beta ^T x_i+b_i)}{\partial \beta}] \\ &=\sum_{i=1}^{n} x_i^T[y_i-p(\beta ^T x_i+b_i)] \\ &= \sum_{i=1}^{n} x_i^T[y_i-\frac{e^{\beta^Tx_i+b_i}}{1+e^{\beta^Tx_i+b_i}}] \end{aligned}\]
-
-The Newton Raphson algorithm needs the second order.
-
-\[\begin{aligned} \nabla^2 \ell &=\frac{\partial \sum_{i=1}^{n} x_i^T[y_i-p(\beta ^T x_i+b_i)]}{\partial \beta} \\ &=-\sum_{i=1}^{n} x_i^T\frac{\partial p(\beta ^T x_i+b_i) }{\partial \beta}\\ &=-\sum_{i=1}^{n} x_i^T\frac{\partial p(\beta ^T x_i+b_i) }{\partial (\beta^Tx_i+b_i)} \frac{\partial (\beta^Tx_i+b_i)}{\partial \beta}\\ &=-\sum_{i=1}^{n} x_i^T p(\beta ^T x_i+b_i)(1-p(\beta ^T x_i+b_i))x_i \\ &=-\sum_{i=1}^{n} x_i^T \frac{e^{\beta^Tx_i+b_i}}{1+e^{\beta^Tx_i+b_i}}(1-\frac{e^{\beta^Tx_i+b_i}}{1+e^{\beta^Tx_i+b_i}})x_i \end{aligned}\]
-Using the Newton Raphson, the following code calculates the basic
-logistic model, without any random effects. As we can see, it produces
-the same result as the R generic function of GLM. Note that, the
-function of Expit and the variables of y and are from the last block of
-R code.
+Using the Newton Raphson, the following code calculates the basic logistic model, without any random effects. As we can see, it produces the same result as the R generic function of GLM.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{y<-}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{) ## observations}
+\NormalTok{y<-}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{) }\CommentTok{## observations}
 \NormalTok{n=}\KeywordTok{length}\NormalTok{(y) }\CommentTok{# the number of observations}
 \NormalTok{Expit<-}\ControlFlowTok{function}\NormalTok{(x)\{}\KeywordTok{exp}\NormalTok{(x)}\OperatorTok{/}\NormalTok{(}\DecValTok{1}\OperatorTok{+}\KeywordTok{exp}\NormalTok{(x))\}}
 
@@ -832,10 +785,80 @@ R code.
 \NormalTok{  beta_old=beta_updated\}}
 
 \NormalTok{beta_old}
+\end{Highlighting}
+\end{Shaded}
 
+\begin{verbatim}
+##           [,1]
+## [1,] 0.4054651
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \KeywordTok{glm}\NormalTok{(y}\OperatorTok{~}\DecValTok{1}\NormalTok{, }\DataTypeTok{family=}\NormalTok{binomial)}\OperatorTok{$}\NormalTok{coefficients}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## (Intercept) 
+##   0.4054651
+\end{verbatim}
+
+\hypertarget{the-main-one}{%
+\chapter{The Main One}\label{the-main-one}}
+
+\hypertarget{the-basic-idea}{%
+\section{The Basic Idea}\label{the-basic-idea}}
+
+\[L(\beta,D|Y)=\int \prod_{i=1}^{n} f_{y_i|u}(y_i|b_i,\beta)f_{b_i}(b_i|D)db_i\]
+
+Notations :
+
+\(y\): Variable for the fixed effect
+
+\(b\): Variable for the random effect
+
+\(\beta\): Parameters for the fixed effect
+
+\(D\): Parameters for the random effect
+
+The dimension of the integral is equal to the levels of the random factors (i.e., the number of observations).
+
+\hypertarget{model-and-r-code}{%
+\section{Model and R Code}\label{model-and-r-code}}
+
+Covarance Matrix for \(n\) observations:
+
+\[V=\sigma^2 \begin{bmatrix} 1 & \rho & \rho^2 & ... & \rho^{n-1} & \rho^n \\ \rho & 1 & \rho & ... & \rho^{n-2}& \rho^{n-1}\\ \rho^2 & \rho & 1 & ... & \rho^{n-3}& \rho^{n-2} \\ ...\\ \rho^n & \rho^{n-1} & \rho^{n-2} & ... & \rho & 1 \end{bmatrix}\]
+
+The inverse matrix is as follows:
+
+\[Q=V^{-1}=\frac{1}{\sigma^2(1-\rho)} \begin{bmatrix} 1 & -\rho & 0 & ... & 0 & 0 \\ -\rho & 1+\rho^2 & -\rho & ... & 0 & 0\\ 0 & -\rho & 1+\rho^2 & ... & 0 & 0 \\ ...\\ 0 & 0 & 0 & ... & 1+\rho^2 &-\rho\\ 0 & 0 & 0 & ... & -\rho & 1 \end{bmatrix}\]
+
+\[N(-\sum_{j\neq k} Q_{kj}b_j^{(m)}Q_{kk}^{-1},Q_{kk}^{-1})\]
+\[ln L(\beta, \theta; Y,b)=\ell=lnf_{Y|b}(Y|b,\beta)+lnf_b(b|\theta)\]
+
+\[a^{(m+1)}=a^{(m)}+\tau(a^{(m)})^{-1} S(a^{(m)})\]
+Where,
+
+\[\tau(a) = -E(\frac{\partial^2 \ell}{\partial \alpha \partial \alpha^{'}}|Y)\]
+
+\[S(a) = E(\frac{\partial \ell}{\partial \alpha }|Y)\]
+Note that, \(\alpha\) is a combination of two sets of parameters.
+
+\[\alpha = \binom{\beta}{b} \]
+
+\[\ell=\sum_{i=1}^{n}\{[y_i ln (\frac{e^{\beta^Tx_i+b_i}}{1+e^{\beta^Tx_i+b_i}}) + (1-y_i) ln(1-\frac{e^{\beta^Tx_i+b_i}}{1+e^{\beta^Tx_i+b_i}})]+lnf_b(b_i|\theta)\}\]
+
+\[\frac{\partial lnf(Y|b, \beta)}{\partial \beta}=X^{'}(Y-E(Y|b))\]
+
+\[\frac{\partial lnf(Y|b, \beta)}{\partial \beta \partial \beta^{'}}=-X^{'}(Y-E(Y|b))\]
+
+\[\begin{aligned} \nabla \ell &= \sum_{i=1}^{n} [y_i \frac{1}{p(\beta ^T x_i+b_i)} \frac{\partial p(\beta ^T x_i+b_i)}{\partial (\beta ^T x_i+b_i)}\frac{\partial (\beta ^T x_i+b_i)}{\partial \beta}+(1-y_i) \frac{1}{1-p(\beta ^T x_i+b_i)}(-1)\frac{\partial p(\beta ^T x_i+b_i)}{\partial (\beta ^T x_i+b_i)}\frac{\partial (\beta ^T x_i+b_i)}{\partial \beta}] \\ &=\sum_{i=1}^{n} x_i^T[y_i-p(\beta ^T x_i+b_i)] \\ &= \sum_{i=1}^{n} x_i^T[y_i-\frac{e^{\beta^Tx_i+b_i}}{1+e^{\beta^Tx_i+b_i}}] \end{aligned}\]
+
+The Newton Raphson algorithm needs the second order.
+
+\[\begin{aligned} \nabla^2 \ell &=\frac{\partial \sum_{i=1}^{n} x_i^T[y_i-p(\beta ^T x_i+b_i)]}{\partial \beta} \\ &=-\sum_{i=1}^{n} x_i^T\frac{\partial p(\beta ^T x_i+b_i) }{\partial \beta}\\ &=-\sum_{i=1}^{n} x_i^T\frac{\partial p(\beta ^T x_i+b_i) }{\partial (\beta^Tx_i+b_i)} \frac{\partial (\beta^Tx_i+b_i)}{\partial \beta}\\ &=-\sum_{i=1}^{n} x_i^T p(\beta ^T x_i+b_i)(1-p(\beta ^T x_i+b_i))x_i \\ &=-\sum_{i=1}^{n} x_i^T \frac{e^{\beta^Tx_i+b_i}}{1+e^{\beta^Tx_i+b_i}}(1-\frac{e^{\beta^Tx_i+b_i}}{1+e^{\beta^Tx_i+b_i}})x_i \end{aligned}\]
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -843,7 +866,7 @@ R code.
 \KeywordTok{library}\NormalTok{(CVTuningCov) }\CommentTok{# Will be used to generate AR1 matrix}
 
 \KeywordTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
-\NormalTok{y<-}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{) ## observations}
+\NormalTok{y<-}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{) }\CommentTok{## observations}
 
 \NormalTok{n=}\KeywordTok{length}\NormalTok{(y) }\CommentTok{# the number of observations}
 
@@ -947,7 +970,8 @@ In the following, I will try to add the random effect.
 \end{Highlighting}
 \end{Shaded}
 
-\section{glmmTMB package}\label{glmmtmb-package}
+\hypertarget{glmmtmb-package}{%
+\section{glmmTMB package}\label{glmmtmb-package}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -966,5 +990,6 @@ In the following, I will try to add the random effect.
 \end{Shaded}
 
 \bibliography{book.bib,packages.bib}
+
 
 \end{document}
