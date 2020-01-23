@@ -22,10 +22,22 @@ Covarance Matrix for $n$ observations:
 
 $$V=\sigma^2 \begin{bmatrix} 1 & \rho & \rho^2 & ... & \rho^{n-1} & \rho^n \\ \rho & 1 & \rho & ... & \rho^{n-2}& \rho^{n-1}\\ \rho^2 & \rho & 1 & ... & \rho^{n-3}& \rho^{n-2} \\ ...\\ \rho^n & \rho^{n-1} & \rho^{n-2} & ... & \rho & 1 \end{bmatrix}$$
 
+$$ \frac{\partial V}{\partial \rho}=\sigma^2 \begin{bmatrix} 0 & 1 & \rho & ... & \rho^{n-2} & \rho^{n-1} \\ 1 & 0 & 1 & ... & \rho^{n-3}& \rho^{n-2}\\ \rho & 1 & 0 & ... & \rho^{n-4}& \rho^{n-3} \\ ...\\ \rho^{n-1} & \rho^{n-2} & \rho^{n-3} & ... & 1 & 0 \end{bmatrix}$$
+
+$$\frac{\partial V}{\partial \sigma^2}=\begin{bmatrix} 1 & \rho & \rho^2 & ... & \rho^{n-1} & \rho^n \\ \rho & 1 & \rho & ... & \rho^{n-2}& \rho^{n-1}\\ \rho^2 & \rho & 1 & ... & \rho^{n-3}& \rho^{n-2} \\ ...\\ \rho^n & \rho^{n-1} & \rho^{n-2} & ... & \rho & 1 \end{bmatrix}$$
 
 The inverse matrix is as follows:
 
 $$Q=V^{-1}=\frac{1}{\sigma^2(1-\rho)} \begin{bmatrix} 1 & -\rho & 0 & ... & 0 & 0 \\ -\rho & 1+\rho^2 & -\rho & ... & 0 & 0\\ 0 & -\rho & 1+\rho^2 & ... & 0 & 0 \\ ...\\ 0 & 0 & 0 & ... & 1+\rho^2 &-\rho\\ 0 & 0 & 0 & ... & -\rho & 1 \end{bmatrix}$$
+$$ \frac{\partial V}{\partial \rho}=\sigma^2 \begin{bmatrix} 0 & 1 & \rho & \rho^2 ... & \rho^{n-2} & \rho^{n-1} \\ 1 & 0 & 1 & \rho  ... & \rho^{n-3}& \rho^{n-2}\\ \rho & 1 & 0 & 1 ... & \rho^{n-4}& \rho^{n-3} \\ ...\\ \rho^{n-1} & \rho^{n-2} & \rho^{n-3} & ... & 1 & 0 \end{bmatrix}$$
+
+$$ V^{-1} \frac{\partial V}{\partial \rho} =\frac{1}{(1-\rho)} \begin{bmatrix} -\rho & 1  & 0 & 0... & 0 & 0 \\ 1 & -2\rho & 1 & 0... & 0& 0\\ 0 &  1& -2\rho & 1... & 0& 0 \\ ...\\ 0& 0& 0& 0 ... &-2\rho & 1\\ 0 & 0 & 0 & ... & 1 & -\rho \end{bmatrix}$$
+$$V^{-1}=\frac{1}{\sigma^2(1-\rho)} \begin{bmatrix} 1 & -\rho & 0 & 0 ... & 0 & 0 \\ -\rho & 1+\rho^2 & -\rho & 0 ... & 0 & 0\\ 0 & -\rho & 1+\rho^2 & -\rho... & 0 & 0 \\ ...\\ 0 & 0 & 0 & ... & 1+\rho^2 &-\rho\\ 0 & 0 & 0 & ... & -\rho & 1 \end{bmatrix}$$
+
+$$ V^{-1} \frac{\partial V}{\partial \rho}V^{-1} =\frac{1}{\sigma^2(1-\rho)^2} \begin{bmatrix} -2\rho & 1  & -\rho & 0... & 0 & 0 \\ 1+2\rho
+^2& -4\rho-2 \rho^3 & 1+3\rho^2 & -\rho... & 0& 0\\ -\rho &  1+3\rho^2 & -4\rho-2 \rho^3 & 1+3\rho^2... & 0& 0 \\ ...\\ 0 & 0 & 0 & ...& -4 \rho -2 \rho^3 & 1+ 2 \rho^2\\ 0 & 0 & 0 & ... & 1+2\rho^2 & -2\rho \end{bmatrix}$$
+
+
 
 $$N(-\sum_{j\neq k} Q_{kj}b_j^{(m)}Q_{kk}^{-1},Q_{kk}^{-1})$$
 $$ln L(\beta, \theta; Y,b)=\ell=lnf_{Y|b}(Y|b,\beta)+lnf_b(b|\theta)$$

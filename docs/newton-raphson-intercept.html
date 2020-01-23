@@ -52,66 +52,41 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -169,42 +144,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="newton-raphson---intercept" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Newton Raphson - Intercept</h1>
 <p>Using the Newton Raphson, the following code calculates the basic logistic model, without any random effects. As we can see, it produces the same result as the R generic function of GLM.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1">y&lt;-<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>) <span class="co">## observations</span></a>
-<a class="sourceLine" id="cb26-2" title="2">n=<span class="kw">length</span>(y) <span class="co"># the number of observations</span></a>
-<a class="sourceLine" id="cb26-3" title="3">Expit&lt;-<span class="cf">function</span>(x){<span class="kw">exp</span>(x)<span class="op">/</span>(<span class="dv">1</span><span class="op">+</span><span class="kw">exp</span>(x))}</a>
-<a class="sourceLine" id="cb26-4" title="4"></a>
-<a class="sourceLine" id="cb26-5" title="5">x_intercept&lt;-<span class="kw">rep</span>(<span class="dv">1</span>,n)</a>
-<a class="sourceLine" id="cb26-6" title="6">x_intercept&lt;-<span class="kw">as.matrix</span>(x_intercept)</a>
-<a class="sourceLine" id="cb26-7" title="7"></a>
-<a class="sourceLine" id="cb26-8" title="8">tolerance=<span class="fl">1e-3</span></a>
-<a class="sourceLine" id="cb26-9" title="9">max_its=<span class="dv">2000</span>;iteration=<span class="dv">1</span>;difference=<span class="dv">2</span></a>
-<a class="sourceLine" id="cb26-10" title="10">W&lt;-<span class="kw">matrix</span>(<span class="dv">0</span>,n,n)</a>
-<a class="sourceLine" id="cb26-11" title="11">beta_old&lt;-<span class="fl">0.1</span></a>
-<a class="sourceLine" id="cb26-12" title="12"></a>
-<a class="sourceLine" id="cb26-13" title="13"><span class="cf">while</span>(difference<span class="op">&gt;</span>tolerance <span class="op">&amp;</span><span class="st"> </span>iteration<span class="op">&lt;</span>max_its)</a>
-<a class="sourceLine" id="cb26-14" title="14">  {</a>
-<a class="sourceLine" id="cb26-15" title="15">  <span class="co"># The first order</span></a>
-<a class="sourceLine" id="cb26-16" title="16">  f_firstorder&lt;-<span class="kw">t</span>(x_intercept)<span class="op">%*%</span>(y<span class="op">-</span><span class="kw">Expit</span>(x_intercept<span class="op">%*%</span>beta_old))</a>
-<a class="sourceLine" id="cb26-17" title="17">  </a>
-<a class="sourceLine" id="cb26-18" title="18">  <span class="co"># The second order</span></a>
-<a class="sourceLine" id="cb26-19" title="19">  <span class="kw">diag</span>(W) =<span class="st"> </span><span class="kw">Expit</span>(x_intercept<span class="op">%*%</span>beta_old)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="kw">Expit</span>(x_intercept<span class="op">%*%</span>beta_old))</a>
-<a class="sourceLine" id="cb26-20" title="20">  <span class="co">#print(Expit(x_intercept%*%beta_old)*(1-Expit(x_intercept%*%beta_old)))</span></a>
-<a class="sourceLine" id="cb26-21" title="21">  </a>
-<a class="sourceLine" id="cb26-22" title="22">  f_secondorder&lt;-<span class="op">-</span><span class="kw">t</span>(x_intercept)<span class="op">%*%</span>W<span class="op">%*%</span>x_intercept</a>
-<a class="sourceLine" id="cb26-23" title="23">  </a>
-<a class="sourceLine" id="cb26-24" title="24">  <span class="co"># Calculate the beta_updated</span></a>
-<a class="sourceLine" id="cb26-25" title="25">  beta_updated=beta_old<span class="op">-</span>(<span class="kw">solve</span>(f_secondorder)<span class="op">%*%</span>f_firstorder)</a>
-<a class="sourceLine" id="cb26-26" title="26">  </a>
-<a class="sourceLine" id="cb26-27" title="27">  difference=<span class="kw">max</span>(<span class="kw">abs</span>(beta_updated<span class="op">-</span>beta_old));</a>
-<a class="sourceLine" id="cb26-28" title="28">  </a>
-<a class="sourceLine" id="cb26-29" title="29">  iteration=iteration<span class="op">+</span><span class="dv">1</span>;</a>
-<a class="sourceLine" id="cb26-30" title="30">  </a>
-<a class="sourceLine" id="cb26-31" title="31">  beta_old=beta_updated}</a>
-<a class="sourceLine" id="cb26-32" title="32"></a>
-<a class="sourceLine" id="cb26-33" title="33">beta_old</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y&lt;-<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>) ## observations
+n=<span class="kw">length</span>(y) <span class="co"># the number of observations</span>
+Expit&lt;-<span class="cf">function</span>(x){<span class="kw">exp</span>(x)<span class="op">/</span>(<span class="dv">1</span><span class="op">+</span><span class="kw">exp</span>(x))}
+
+x_intercept&lt;-<span class="kw">rep</span>(<span class="dv">1</span>,n)
+x_intercept&lt;-<span class="kw">as.matrix</span>(x_intercept)
+
+tolerance=<span class="fl">1e-3</span>
+max_its=<span class="dv">2000</span>;iteration=<span class="dv">1</span>;difference=<span class="dv">2</span>
+W&lt;-<span class="kw">matrix</span>(<span class="dv">0</span>,n,n)
+beta_old&lt;-<span class="fl">0.1</span>
+
+<span class="cf">while</span>(difference<span class="op">&gt;</span>tolerance <span class="op">&amp;</span><span class="st"> </span>iteration<span class="op">&lt;</span>max_its)
+  {
+  <span class="co"># The first order</span>
+  f_firstorder&lt;-<span class="kw">t</span>(x_intercept)<span class="op">%*%</span>(y<span class="op">-</span><span class="kw">Expit</span>(x_intercept<span class="op">%*%</span>beta_old))
+  
+  <span class="co"># The second order</span>
+  <span class="kw">diag</span>(W) =<span class="st"> </span><span class="kw">Expit</span>(x_intercept<span class="op">%*%</span>beta_old)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="kw">Expit</span>(x_intercept<span class="op">%*%</span>beta_old))
+  <span class="co">#print(Expit(x_intercept%*%beta_old)*(1-Expit(x_intercept%*%beta_old)))</span>
+  
+  f_secondorder&lt;-<span class="op">-</span><span class="kw">t</span>(x_intercept)<span class="op">%*%</span>W<span class="op">%*%</span>x_intercept
+  
+  <span class="co"># Calculate the beta_updated</span>
+  beta_updated=beta_old<span class="op">-</span>(<span class="kw">solve</span>(f_secondorder)<span class="op">%*%</span>f_firstorder)
+  
+  difference=<span class="kw">max</span>(<span class="kw">abs</span>(beta_updated<span class="op">-</span>beta_old));
+  
+  iteration=iteration<span class="op">+</span><span class="dv">1</span>;
+  
+  beta_old=beta_updated}
+
+beta_old</code></pre></div>
 <pre><code>##           [,1]
 ## [1,] 0.4054651</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">glm</span>(y<span class="op">~</span><span class="dv">1</span>, <span class="dt">family=</span>binomial)<span class="op">$</span>coefficients</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glm</span>(y<span class="op">~</span><span class="dv">1</span>, <span class="dt">family=</span>binomial)<span class="op">$</span>coefficients</code></pre></div>
 <pre><code>## (Intercept) 
 ##   0.4054651</code></pre>
 
@@ -270,7 +245,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
+    var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
