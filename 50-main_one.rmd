@@ -56,8 +56,7 @@ $$\begin{aligned} \nabla^2 \ell &=\frac{\partial \sum_{i=1}^{n} x_i^T[y_i-p(\bet
 
 
 
-```{R eval = FALSE}
-
+```{R}
 #install.packages("CVTuningCov")
 library(CVTuningCov) # Will be used to generate AR1 matrix
 
@@ -65,7 +64,6 @@ set.seed(123)
 y<-c(1,1,1,0,0,1,1,0,1,0) ## observations
 
 n=length(y) # the number of observations
-
 
 #Establish the exp function
 Expit<-function(x){exp(x)/(1+exp(x))}
@@ -87,7 +85,6 @@ beta<-0.5 # Initial value for the intercept of Y
 
 f_random<-function(sigma_recoards, rho_records,beta)
 {
-  
 co_matrix<-(sigma_recoards^2)*AR1(n,rho_records) # covariance matrix
 co_matrix_inverse<-solve(co_matrix)  # inverse covariance matrix
 
@@ -97,12 +94,14 @@ for (k in 1:n)
   # Variance for the random effect
   sd_0<-1/(co_matrix_inverse[k,k])
   
+  # mean for the random effect
   for(j in 1:n)
       { # Make sure that k is not equal to j, otherwise 0
         Q_kj<-ifelse(j!=k,co_matrix_inverse[k,j],0)
         # Calculate the mean for the random effect; sum of mean in a loop
         mean_0<-mean_0-(Q_kj/co_matrix_inverse[k,k])*b_records[j]
       }
+  
   # Draw a random number from the normal distribution for the random effect
   b_candidate<-rnorm(1,mean_0,sd_0)
   
@@ -111,7 +110,9 @@ for (k in 1:n)
   
   Smaller_value<-min(exp(candidate_lp-current_lp),1)
   # Draw a random number from the uniform distribution
+  
   Random_probability<-runif(1)
+  
   # Update b (i.e., random variable)
   b_records[k]<-ifelse(Random_probability<Smaller_value,b_candidate,b_records[k])
 }
@@ -120,7 +121,7 @@ return(b_records)
 }
 
 # Print result
-#b_records<-f_random(1,0.8,0.3) 
+b_records<-f_random(1,0.8,0.3) 
 ```
 
 

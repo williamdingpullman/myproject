@@ -179,7 +179,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb26-8" title="8">tolerance=<span class="fl">1e-3</span></a>
 <a class="sourceLine" id="cb26-9" title="9">max_its=<span class="dv">2000</span>;iteration=<span class="dv">1</span>;difference=<span class="dv">2</span></a>
 <a class="sourceLine" id="cb26-10" title="10">W&lt;-<span class="kw">matrix</span>(<span class="dv">0</span>,n,n)</a>
-<a class="sourceLine" id="cb26-11" title="11">beta_old&lt;-<span class="fl">0.4</span></a>
+<a class="sourceLine" id="cb26-11" title="11">beta_old&lt;-<span class="fl">0.1</span></a>
 <a class="sourceLine" id="cb26-12" title="12"></a>
 <a class="sourceLine" id="cb26-13" title="13"><span class="cf">while</span>(difference<span class="op">&gt;</span>tolerance <span class="op">&amp;</span><span class="st"> </span>iteration<span class="op">&lt;</span>max_its)</a>
 <a class="sourceLine" id="cb26-14" title="14">  {</a>
@@ -188,19 +188,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb26-17" title="17">  </a>
 <a class="sourceLine" id="cb26-18" title="18">  <span class="co"># The second order</span></a>
 <a class="sourceLine" id="cb26-19" title="19">  <span class="kw">diag</span>(W) =<span class="st"> </span><span class="kw">Expit</span>(x_intercept<span class="op">%*%</span>beta_old)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="kw">Expit</span>(x_intercept<span class="op">%*%</span>beta_old))</a>
-<a class="sourceLine" id="cb26-20" title="20">  </a>
-<a class="sourceLine" id="cb26-21" title="21">  f_secondorder&lt;-<span class="op">-</span><span class="kw">t</span>(x_intercept)<span class="op">%*%</span>W<span class="op">%*%</span>x_intercept</a>
-<a class="sourceLine" id="cb26-22" title="22">  </a>
-<a class="sourceLine" id="cb26-23" title="23">  <span class="co"># Calculate the beta_updated</span></a>
-<a class="sourceLine" id="cb26-24" title="24">  beta_updated=beta_old<span class="op">-</span>(<span class="kw">solve</span>(f_secondorder)<span class="op">%*%</span>f_firstorder)</a>
-<a class="sourceLine" id="cb26-25" title="25">  </a>
-<a class="sourceLine" id="cb26-26" title="26">  difference=<span class="kw">max</span>(<span class="kw">abs</span>(beta_updated<span class="op">-</span>beta_old));</a>
-<a class="sourceLine" id="cb26-27" title="27">  </a>
-<a class="sourceLine" id="cb26-28" title="28">  iteration=iteration<span class="op">+</span><span class="dv">1</span>;</a>
-<a class="sourceLine" id="cb26-29" title="29">  </a>
-<a class="sourceLine" id="cb26-30" title="30">  beta_old=beta_updated}</a>
-<a class="sourceLine" id="cb26-31" title="31"></a>
-<a class="sourceLine" id="cb26-32" title="32">beta_old</a></code></pre></div>
+<a class="sourceLine" id="cb26-20" title="20">  <span class="co">#print(Expit(x_intercept%*%beta_old)*(1-Expit(x_intercept%*%beta_old)))</span></a>
+<a class="sourceLine" id="cb26-21" title="21">  </a>
+<a class="sourceLine" id="cb26-22" title="22">  f_secondorder&lt;-<span class="op">-</span><span class="kw">t</span>(x_intercept)<span class="op">%*%</span>W<span class="op">%*%</span>x_intercept</a>
+<a class="sourceLine" id="cb26-23" title="23">  </a>
+<a class="sourceLine" id="cb26-24" title="24">  <span class="co"># Calculate the beta_updated</span></a>
+<a class="sourceLine" id="cb26-25" title="25">  beta_updated=beta_old<span class="op">-</span>(<span class="kw">solve</span>(f_secondorder)<span class="op">%*%</span>f_firstorder)</a>
+<a class="sourceLine" id="cb26-26" title="26">  </a>
+<a class="sourceLine" id="cb26-27" title="27">  difference=<span class="kw">max</span>(<span class="kw">abs</span>(beta_updated<span class="op">-</span>beta_old));</a>
+<a class="sourceLine" id="cb26-28" title="28">  </a>
+<a class="sourceLine" id="cb26-29" title="29">  iteration=iteration<span class="op">+</span><span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb26-30" title="30">  </a>
+<a class="sourceLine" id="cb26-31" title="31">  beta_old=beta_updated}</a>
+<a class="sourceLine" id="cb26-32" title="32"></a>
+<a class="sourceLine" id="cb26-33" title="33">beta_old</a></code></pre></div>
 <pre><code>##           [,1]
 ## [1,] 0.4054651</code></pre>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">glm</span>(y<span class="op">~</span><span class="dv">1</span>, <span class="dt">family=</span>binomial)<span class="op">$</span>coefficients</a></code></pre></div>

@@ -124,7 +124,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{20 January, 2020}
+    \date{22 January, 2020}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -763,7 +763,7 @@ Using the Newton Raphson, the following code calculates the basic logistic model
 \NormalTok{tolerance=}\FloatTok{1e-3}
 \NormalTok{max_its=}\DecValTok{2000}\NormalTok{;iteration=}\DecValTok{1}\NormalTok{;difference=}\DecValTok{2}
 \NormalTok{W<-}\KeywordTok{matrix}\NormalTok{(}\DecValTok{0}\NormalTok{,n,n)}
-\NormalTok{beta_old<-}\FloatTok{0.4}
+\NormalTok{beta_old<-}\FloatTok{0.1}
 
 \ControlFlowTok{while}\NormalTok{(difference}\OperatorTok{>}\NormalTok{tolerance }\OperatorTok{&}\StringTok{ }\NormalTok{iteration}\OperatorTok{<}\NormalTok{max_its)}
 \NormalTok{  \{}
@@ -772,6 +772,7 @@ Using the Newton Raphson, the following code calculates the basic logistic model
   
   \CommentTok{# The second order}
   \KeywordTok{diag}\NormalTok{(W) =}\StringTok{ }\KeywordTok{Expit}\NormalTok{(x_intercept}\OperatorTok{%*%}\NormalTok{beta_old)}\OperatorTok{*}\NormalTok{(}\DecValTok{1}\OperatorTok{-}\KeywordTok{Expit}\NormalTok{(x_intercept}\OperatorTok{%*%}\NormalTok{beta_old))}
+  \CommentTok{#print(Expit(x_intercept%*%beta_old)*(1-Expit(x_intercept%*%beta_old)))}
   
 \NormalTok{  f_secondorder<-}\OperatorTok{-}\KeywordTok{t}\NormalTok{(x_intercept)}\OperatorTok{%*%}\NormalTok{W}\OperatorTok{%*%}\NormalTok{x_intercept}
   
@@ -870,7 +871,6 @@ The Newton Raphson algorithm needs the second order.
 
 \NormalTok{n=}\KeywordTok{length}\NormalTok{(y) }\CommentTok{# the number of observations}
 
-
 \CommentTok{#Establish the exp function}
 \NormalTok{Expit<-}\ControlFlowTok{function}\NormalTok{(x)\{}\KeywordTok{exp}\NormalTok{(x)}\OperatorTok{/}\NormalTok{(}\DecValTok{1}\OperatorTok{+}\KeywordTok{exp}\NormalTok{(x))\}}
 \CommentTok{#Y: observations}
@@ -891,7 +891,6 @@ The Newton Raphson algorithm needs the second order.
 
 \NormalTok{f_random<-}\ControlFlowTok{function}\NormalTok{(sigma_recoards, rho_records,beta)}
 \NormalTok{\{}
-  
 \NormalTok{co_matrix<-(sigma_recoards}\OperatorTok{^}\DecValTok{2}\NormalTok{)}\OperatorTok{*}\KeywordTok{AR1}\NormalTok{(n,rho_records) }\CommentTok{# covariance matrix}
 \NormalTok{co_matrix_inverse<-}\KeywordTok{solve}\NormalTok{(co_matrix)  }\CommentTok{# inverse covariance matrix}
 
@@ -901,12 +900,14 @@ The Newton Raphson algorithm needs the second order.
   \CommentTok{# Variance for the random effect}
 \NormalTok{  sd_}\DecValTok{0}\NormalTok{<-}\DecValTok{1}\OperatorTok{/}\NormalTok{(co_matrix_inverse[k,k])}
   
+  \CommentTok{# mean for the random effect}
   \ControlFlowTok{for}\NormalTok{(j }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\NormalTok{n)}
 \NormalTok{      \{ }\CommentTok{# Make sure that k is not equal to j, otherwise 0}
 \NormalTok{        Q_kj<-}\KeywordTok{ifelse}\NormalTok{(j}\OperatorTok{!=}\NormalTok{k,co_matrix_inverse[k,j],}\DecValTok{0}\NormalTok{)}
         \CommentTok{# Calculate the mean for the random effect; sum of mean in a loop}
 \NormalTok{        mean_}\DecValTok{0}\NormalTok{<-mean_}\DecValTok{0}\OperatorTok{-}\NormalTok{(Q_kj}\OperatorTok{/}\NormalTok{co_matrix_inverse[k,k])}\OperatorTok{*}\NormalTok{b_records[j]}
 \NormalTok{      \}}
+  
   \CommentTok{# Draw a random number from the normal distribution for the random effect}
 \NormalTok{  b_candidate<-}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{1}\NormalTok{,mean_}\DecValTok{0}\NormalTok{,sd_}\DecValTok{0}\NormalTok{)}
   
@@ -915,7 +916,9 @@ The Newton Raphson algorithm needs the second order.
   
 \NormalTok{  Smaller_value<-}\KeywordTok{min}\NormalTok{(}\KeywordTok{exp}\NormalTok{(candidate_lp}\OperatorTok{-}\NormalTok{current_lp),}\DecValTok{1}\NormalTok{)}
   \CommentTok{# Draw a random number from the uniform distribution}
+  
 \NormalTok{  Random_probability<-}\KeywordTok{runif}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+  
   \CommentTok{# Update b (i.e., random variable)}
 \NormalTok{  b_records[k]<-}\KeywordTok{ifelse}\NormalTok{(Random_probability}\OperatorTok{<}\NormalTok{Smaller_value,b_candidate,b_records[k])}
 \NormalTok{\}}
@@ -924,7 +927,7 @@ The Newton Raphson algorithm needs the second order.
 \NormalTok{\}}
 
 \CommentTok{# Print result}
-\CommentTok{#b_records<-f_random(1,0.8,0.3) }
+\NormalTok{b_records<-}\KeywordTok{f_random}\NormalTok{(}\DecValTok{1}\NormalTok{,}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.3}\NormalTok{) }
 \end{Highlighting}
 \end{Shaded}
 

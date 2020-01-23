@@ -13,7 +13,7 @@ x_intercept<-as.matrix(x_intercept)
 tolerance=1e-3
 max_its=2000;iteration=1;difference=2
 W<-matrix(0,n,n)
-beta_old<-0.4
+beta_old<-0.1
 
 while(difference>tolerance & iteration<max_its)
   {
@@ -22,6 +22,7 @@ while(difference>tolerance & iteration<max_its)
   
   # The second order
   diag(W) = Expit(x_intercept%*%beta_old)*(1-Expit(x_intercept%*%beta_old))
+  #print(Expit(x_intercept%*%beta_old)*(1-Expit(x_intercept%*%beta_old)))
   
   f_secondorder<--t(x_intercept)%*%W%*%x_intercept
   
